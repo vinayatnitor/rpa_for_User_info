@@ -1,0 +1,151 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="562,2018" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="522,1696" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="noOfUser" />
+      <Variable x:TypeArguments="sd:DataTable" Name="userInfoDataTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="500,92" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter how many user information do you want?" Title="User count">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:Int32">[noOfUser]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:BuildDataTable DataTable="[userInfoDataTable]" DisplayName="Data Table For user Information" sap:VirtualizedContainerService.HintSize="500,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phone_x0020_No&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Birth_x0020_date&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="500,1341" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" NewSession="False" Private="False" Url="https://www.fakenamegenerator.com/">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1242" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="464,1118" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+              <DoWhile.Variables>
+                <Variable x:TypeArguments="x:Int32" Default="0" Name="noOfUserCounter" />
+              </DoWhile.Variables>
+              <DoWhile.Condition>[noOfUserCounter&lt;=noOfUser]</DoWhile.Condition>
+              <Sequence sap:VirtualizedContainerService.HintSize="336,957" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="fullName" />
+                  <Variable x:TypeArguments="x:String" Name="dateOfBirth" />
+                  <Variable x:TypeArguments="x:String" Name="phoneNo" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:GetFullText DisplayName="user Full Name" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="GetFullText_2" IgnoreHidden="False">
+                  <ui:GetFullText.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="bcbb3781e0c813b395ad6e023e19a9dd" Selector="&lt;webctrl idx='1' tag='H3' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:GetFullText.Target>
+                  <ui:GetFullText.Text>
+                    <OutArgument x:TypeArguments="x:String">[fullName]</OutArgument>
+                  </ui:GetFullText.Text>
+                </ui:GetFullText>
+                <ui:GetFullText DisplayName="User Phone No" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="GetFullText_3" IgnoreHidden="False">
+                  <ui:GetFullText.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="45807dfd2493a12d27153f574064a896" Selector="&lt;webctrl idx='2' isleaf='1' tag='DD' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:GetFullText.Target>
+                  <ui:GetFullText.Text>
+                    <OutArgument x:TypeArguments="x:String">[phoneNo]</OutArgument>
+                  </ui:GetFullText.Text>
+                </ui:GetFullText>
+                <ui:GetFullText DisplayName="Birthday" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="GetFullText_4" IgnoreHidden="False">
+                  <ui:GetFullText.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9f6125ef4c2cbbd1b414c7c97958edff" Selector="&lt;webctrl idx='4' isleaf='1' tag='DD' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:GetFullText.Target>
+                  <ui:GetFullText.Text>
+                    <OutArgument x:TypeArguments="x:String">[dateOfBirth]</OutArgument>
+                  </ui:GetFullText.Text>
+                </ui:GetFullText>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{fullName,phoneNo,dateOfBirth}]" DataTable="[userInfoDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  genbtn'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="121897d69f31cb81904a460e735590c1" Selector="&lt;webctrl id='genbtn' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[userInfoDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="UserInfoData.csv" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+                <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[noOfUserCounter]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[noOfUserCounter+1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </DoWhile>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>
